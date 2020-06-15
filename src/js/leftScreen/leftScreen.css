@@ -1,0 +1,17 @@
+.l-s-container {
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid black; */
+}
+
+.top-div{
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(rgb(254, 255, 255) 0%, rgb(177, 182, 185) 100%);
+    border-radius: 10px 0px 0px 0px;
+}
+
+.nav-div{
+    width: 100%;
+    height: 90%;
+}

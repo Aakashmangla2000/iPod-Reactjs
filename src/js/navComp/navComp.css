@@ -1,0 +1,11 @@
+.nav-el{
+    background: white;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+.active {
+    background: linear-gradient(rgb(60, 184, 255) 0%, rgb(52, 122, 181) 100%);
+    color: white;
+}
