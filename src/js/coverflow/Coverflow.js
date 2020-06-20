@@ -1,6 +1,6 @@
 import React from 'react'
-import Coverflow from 'react-coverflow';
-import { StyleRoot } from 'radium';
+// import Coverflow from 'react-coverflow';
+// import { StyleRoot } from 'radium';
 
 function Coverfloww() {
     return (
