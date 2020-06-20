@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './navComp.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 class NavComp extends Component {
 
     constructor(props) {
@@ -24,14 +24,14 @@ class NavComp extends Component {
             ch = max
         }
         let l = this.state.listItems.filter((el,ind)=>ch===ind?el:null)
-        if(ch2 === true && l!= 'Background' && l != 'iPod Colour' ){
+        if(ch2 === true && l!== 'Background' && l !== 'iPod Colour' ){
             window.location = `/${l}`
         }
         else{
            ch2 = false
         }
        
-    let listIt = this.state.listItems.map((el,ind) => <div className={`nav-el ${ch===ind?'active':''}`}><div className="txt">{el}<img className="r-arrow" src="arrow_right.svg"></img></div></div>)
+    let listIt = this.state.listItems.map((el,ind) => <div className={`nav-el ${ch===ind?'active':''}`}><div className="txt">{el}<img alt='' className="r-arrow" src="arrow_right.svg"></img></div></div>)
         return (
             <div>
                 {listIt}

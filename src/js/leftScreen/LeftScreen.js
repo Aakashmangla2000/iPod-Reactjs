@@ -17,7 +17,7 @@ class leftScreen extends Component {
             <div className="l-s-container">
                 <div className="top-div">
                     iPod
-                    <img className='battery' src='battery.svg'></img>
+                    <img alt='' className='battery' src='battery.svg'></img>
                 </div>
                 <div className="nav-div">
                     <div>
@@ -25,7 +25,7 @@ class leftScreen extends Component {
                     </div>
                 </div>
             </div>
-            <img className="right-img" src="2c3a5a203d30897358861ae85cb98144.jpg"></img>
+            <img alt='' className="right-img" src="2c3a5a203d30897358861ae85cb98144.jpg"></img>
             </div>
         )
     }

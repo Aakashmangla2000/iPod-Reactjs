@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './wheel.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 
 class Wheel extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ let x = 0;
 let y = 0;
 
 function moused(e) {
-if(e.clientX!=undefined){
+if(e.clientX!==undefined){
   x = e.clientX;
   y = e.clientY;}
   else{
@@ -53,12 +53,11 @@ if(e.clientX!=undefined){
   y = e.touches[0].clientY;  
   }
   isDrawing = true;
-  fa = 0;
 }
 
 function mousem(e) {
   if (isDrawing === true) {
-    if(e.clientX!=undefined){
+    if(e.clientX!==undefined){
         drawLine(0, x, y, e.clientX, e.clientY);
         x = e.clientX;
         y = e.clientY;
@@ -74,7 +73,7 @@ function mousem(e) {
 
 function mouseu(e) {
   if (isDrawing === true) {
-    if(e.clientX!=undefined){
+    if(e.clientX!==undefined){
         drawLine(0, x, y, e.clientX, e.clientY);
     }
         else{
@@ -87,7 +86,6 @@ function mouseu(e) {
 }
 
 let flag = 0
-let fa = 0;
 let st = 0;
 
 
@@ -98,10 +96,9 @@ function drawLine(context, x1, y1, x2, y2 , t = 0) {
     y2 = window.innerHeight/2 - y2+ t
 
     let angle = 0;
-    if(y2!=y1&&x2!=x1){
+    if(y2!==y1&&x2!==x1){
     angle = ((Math.atan(x1/y1) - Math.atan(x2/y2))*180)/3.14
         
-    fa += angle;
     console.log(x1,x2,'width')
 
     if(flag>=4){

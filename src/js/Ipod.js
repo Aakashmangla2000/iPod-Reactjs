@@ -5,12 +5,7 @@ import Screen from './screen/Screen'
 import Wheel from './wheel/Wheel'
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    useRouteMatch
+    BrowserRouter as Router
   } from "react-router-dom";
 
 class Ipod extends Component {
