@@ -3,9 +3,22 @@
     font-weight: bold;
     color: black;
     margin: 0;
+    height: 30px;
+    display: flex;
+    justify-content: left;
 }
 
 .active {
     background: linear-gradient(rgb(60, 184, 255) 0%, rgb(52, 122, 181) 100%);
     color: white;
+}
+
+.txt {
+    margin-top: 4px;
+    margin-left: 2px;
+    width: 100%;
+}
+
+.r-arrow{
+    float: right;
 }
