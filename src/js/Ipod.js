@@ -17,7 +17,7 @@ class Ipod extends Component {
             page: '',
             action: 0,
             click: false,
-            mainmenu: ['CoverFlow', 'Music' , 'Games' , 'Settings'],
+            mainmenu: ['CoverFlow', 'Music' , 'Game' , 'Settings'],
             settingsmenu: ['Background', 'iPod Colour' , 'About'],
             musicmenu: ['Artists', 'Albums' , 'Radio'],
             songmenu: ['Believer','Blinding Lights','I Like Me Better','Numb','Queen - BR','Sunflower','Udd Gaye','Viva La Vida'],

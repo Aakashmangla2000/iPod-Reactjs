@@ -9,6 +9,7 @@ import GamesComp from '../Games/GamesComp'
 import AboutUs from '../AboutUs/AboutUs'
 import SongsComp from '../Music/Songs/SongsComp'
 import SongComp from '../Music/SongComp/SongComp'
+import SnakeGame from '../snakeGame/SnakeGame'
 
 class Screen extends Component {
 
@@ -30,7 +31,7 @@ class Screen extends Component {
                     </Route>
                     <Route path='/Coverflow' exact strict render><Coverflow act={this.props.act}/></Route>
                     <Route path='/Music' exact strict render><MusicComp act={this.props.act} click={this.props.click} musicmenu={this.props.musicmenu}/></Route>
-                    <Route path='/Games' exact strict render><GamesComp/></Route>
+                    <Route path='/Game' exact strict render><SnakeGame/></Route>
                     <Route path='/Settings' exact strict render><SettingsScreen act={this.props.act} click={this.props.click} thm={this.props.thm} settingsmenu={this.props.settingsmenu}/></Route>
                     <Route path='/About' exact strict render><AboutUs/></Route>
                     <Route path='/Radio' exact strict render><SongsComp/></Route>
