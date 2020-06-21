@@ -56,7 +56,8 @@ if(e.clientX!==undefined){
 }
 
 function mousem(e) {
-  if (isDrawing === true) {
+  e.preventDefault();
+    if (isDrawing === true) {
     if(e.clientX!==undefined){
         drawLine(0, x, y, e.clientX, e.clientY);
         x = e.clientX;
@@ -99,16 +100,16 @@ function drawLine(context, x1, y1, x2, y2 , t = 0) {
     if(y2!==y1&&x2!==x1){
     angle = ((Math.atan(x1/y1) - Math.atan(x2/y2))*180)/3.14
         
-    console.log(x1,x2,'width')
+    // console.log(x1,x2,'width')
 
     if(flag>=4){
     if(angle>=0){
-      console.log('anti')
+      // console.log('anti')
       if(st>0)
       st -= 1
     }
     else{
-      console.log('clockwise')
+      // console.log('clockwise')
       if(st<3)
       st += 1
     }
