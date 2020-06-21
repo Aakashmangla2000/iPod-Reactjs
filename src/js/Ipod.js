@@ -19,6 +19,8 @@ class Ipod extends Component {
             click: false,
             mainmenu: ['CoverFlow', 'Music' , 'Games' , 'Settings'],
             settingsmenu: ['Background', 'iPod Colour' , 'About'],
+            musicmenu: ['Artists', 'Albums' , 'Radio'],
+            songmenu: ['Believer','Blinding Lights','I Like Me Better','Numb','Queen - BR','Sunflower','Udd Gaye','Viva La Vida'],
             cssProperties: {}
 
         }
@@ -63,7 +65,7 @@ class Ipod extends Component {
             <Router>
             <div className="bodyy" style={this.state.cssProperties}>
                 <div className='ip'>
-                <Screen act={this.state.action} click={this.state.click} mainmenu={this.state.mainmenu} settingsmenu={this.state.settingsmenu} thm={(thm) => this.changeTheme(thm)}/>
+                <Screen act={this.state.action} songmenu={this.state.songmenu} click={this.state.click} mainmenu={this.state.mainmenu} musicmenu={this.state.musicmenu} settingsmenu={this.state.settingsmenu} thm={(thm) => this.changeTheme(thm)}/>
                 <Wheel childFunc={this.getActionFromWheel} buttonClicked={this.buttonClicked}/>
                 </div>
             </div>

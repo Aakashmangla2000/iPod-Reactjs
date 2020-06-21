@@ -9,9 +9,23 @@ class SettingsScreen extends Component {
         super(props)
     
         this.state = {
-            isClicked: true,
-            ipodClicked: true
+            isClicked: false,
+            ipodClicked: false
         }
+    //     this.getbackground =this.getbackground.bind(this)
+    //     this.getipod = this.getipod.bind(this)
+    }
+
+    getipod(st){
+        this.setState({
+            ipodClicked: st
+        })
+    }
+
+    getbackground(st){
+        this.setState({
+            isClicked: st
+        })
     }
     
     render() {
@@ -28,7 +42,7 @@ class SettingsScreen extends Component {
 
         return (
             <div className="setting-ls">
-              <LeftScreen act={this.props.act} mainmenu={this.props.settingsmenu}/>
+              <LeftScreen act={this.props.act} click={this.props.click} mainmenu={this.props.settingsmenu} />
               {/* <button onClick={() => { this.setState({ isClicked: !this.state.isClicked }); this.props.thm(cssProperties) }}>Change Background</button>
             <button onClick={() => { this.setState({ ipodClicked: !this.state.ipodClicked }); this.props.thm(cssProperties) }}>Change Ipod Colour</button>
                  */}

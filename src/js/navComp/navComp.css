@@ -3,14 +3,16 @@
     font-weight: bold;
     color: black;
     margin: 0;
-    height: 30px;
+    height: 25px;
     display: flex;
     justify-content: left;
+    border-radius: 15px;
 }
 
 .active {
     background: linear-gradient(rgb(60, 184, 255) 0%, rgb(52, 122, 181) 100%);
     color: white;
+    border-radius: 0px;
 }
 
 .txt {

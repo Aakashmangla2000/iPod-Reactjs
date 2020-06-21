@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import './navComp.css'
+import { Route } from 'react-router-dom'
+import SongScreen from '../SongScreen/SongScreen'
+
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -12,30 +15,79 @@ class NavComp extends Component {
         super(props)
     
         this.state = {
-            listItems: this.props.mainmenu
+            listItems: this.props.mainmenu,
+            isClicked: false,
+            ipodClicked: false,
+            show: false
         }
+        this.changeBg = this.changeBg.bind(this)
     }
 
+    componentDidMount() {
+        this.intervalID = setInterval(
+          () => {if(this.props.onSelect){
+            return this.props.onSelect(this.props.act)
+          }},
+          1000
+        );
+      }
+
+    //   changetime(){
+    //     this.setState({
+    //         time: parseInt(this.audio.currentTime)
+    //     })
+    //   }
+
+      componentWillUnmount() {
+        // this.audio.removeEventListener('ended', () => this.setState({ play: false }));  
+        clearInterval(this.intervalID);
+      }
+    changeBg(){
+        this.setState({ isClicked: !this.state.isClicked})
+    }
 
     render() {
-        let max = this.state.listItems.length-1, ch = this.props.act;
+        // console.log(this.state.listItems)
+
+        let cssProperties = {}
+        if (this.state.isClicked) {
+         cssProperties['--bgcolor'] = 'white'
+        }
+        if (this.state.ipodClicked) {
+            cssProperties['--ipodcolor'] = 'linear-gradient(to bottom, #787678 0%, #353536 100%)'
+            cssProperties['--wheelbutton'] = '#4d4c4e'
+            cssProperties['--wheelcolor'] = '#2f2f2f'
+        }
+
+        let max = this.state.listItems.length-1, ch = 0;
         let ch2 = this.props.click
+        ch += this.props.act
         if(ch>max){
             ch = max
         }
+        else if(ch<0){
+            ch = 0
+        }
         let l = this.state.listItems.filter((el,ind)=>ch===ind?el:null)
-        if(ch2 === true && l!== 'Background' && l !== 'iPod Colour' ){
+        // console.log(l)
+        if(ch2 === true && l[0]!=='Background' && l[0]!=='iPod Colour' && window.location.pathname !== '/Artists' && window.location.pathname !== '/Albums'  ){
             window.location = `/${l}`
+            // this.props.onSelect(l)
+            // console.log('hi')
         }
         else{
            ch2 = false
+        //    console.log('bye')
         }
        
     let listIt = this.state.listItems.map((el,ind) => <div className={`nav-el ${ch===ind?'active':''}`}><div className="txt">{el}<img alt='' className="r-arrow" src="arrow_right.svg"></img></div></div>)
-        return (
-            <div>
-                {listIt}
-            </div>
+    // console.log(l)    
+    return (
+            <div sel = {() => this.props.onSelect(l)}>
+                {listIt}{() => this.props.onSelect(l)}
+                {/* {this.state.show && <SongScreen/>}   */}
+                <Route path={`/Adhi%20Adhi%20Raat`} exact strict render><SongScreen l={l}/></Route>
+    </div>
         )
     }
 }

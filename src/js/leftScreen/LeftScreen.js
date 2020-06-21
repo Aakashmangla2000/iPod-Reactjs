@@ -7,10 +7,12 @@ class leftScreen extends Component {
         super(props)
     
         this.state = {
-             
+             nm: ''
         }
     }
     
+
+
     render() {
         return (
             <div className="tot-sc">
@@ -21,7 +23,7 @@ class leftScreen extends Component {
                 </div>
                 <div className="nav-div">
                     <div>
-                        <NavComp act={this.props.act} click={this.props.click} mainmenu={this.props.mainmenu} thm={this.props.thm}/>
+                        <NavComp onSelect={(this.props.onSelect)} act={this.props.act} click={this.props.click} mainmenu={this.props.mainmenu} thm={this.props.thm}/>
                     </div>
                 </div>
             </div>

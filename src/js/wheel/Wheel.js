@@ -17,9 +17,10 @@ class Wheel extends Component {
     }
     
     goBack(){
-        window.location = "javascript:history.back()"
+        window.location = "../"
     }
     render() {
+      let clck = false
         return (
             <div className="wheelBody">
                 <div className="wheel">
@@ -91,6 +92,16 @@ let st = 0;
 
 
 function drawLine(context, x1, y1, x2, y2 , t = 0) {
+  let max = 4
+  let loc = window.location.pathname
+  // console.log(loc)
+
+  if(loc === '/CoverFlow')
+  max = 9
+
+  if(loc === '/Artists' || loc === '/Albums')
+  max = 8
+
     x1 = x1 - window.innerWidth/2 + t
     y1 = window.innerHeight/2 - y1+ t
     x2 = x2 - window.innerWidth/2+ t
@@ -110,7 +121,7 @@ function drawLine(context, x1, y1, x2, y2 , t = 0) {
     }
     else{
       // console.log('clockwise')
-      if(st<3)
+      if(st<max)
       st += 1
     }
 }
