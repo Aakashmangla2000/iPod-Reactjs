@@ -20,7 +20,6 @@ class Wheel extends Component {
     window.location =  '/'
     }
     render() {
-      let clck = false
         return (
             <div className="wheelBody">
                 <div className="wheel">
@@ -98,11 +97,12 @@ function drawLine(context, x1, y1, x2, y2 , t = 0) {
   let loc = window.location.pathname
   // console.log(loc)
 
-  if(loc === '/CoverFlow')
-  max = 9
-
+  if(loc === '/CoverFlow'){
+    // st = 4
+    max = 7
+  }
   if(loc === '/Artists' || loc === '/Albums')
-  max = 8
+  max = 7
 
     x1 = x1 - window.innerWidth/2 + t
     y1 = window.innerHeight/2 - y1+ t

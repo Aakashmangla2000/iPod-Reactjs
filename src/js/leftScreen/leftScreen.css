@@ -22,13 +22,22 @@
     height: 90%;
 }
 
-.battery {
-    width: 22px;
-    margin-top: 5px;
-    float: right;
-}
+
 .tot-sc{
     height: 100%;
     width: 100%;
     display: flex;
+}
+
+.play {
+    width: 22px;
+    height: 10px;
+    margin-top: 5px;
+    float: right;
+}
+
+.battery {
+    width: 22px;
+    margin-top: 5px;
+    float: right;
 }

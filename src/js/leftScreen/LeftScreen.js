@@ -8,7 +8,9 @@ class leftScreen extends Component {
         super(props)
     
         this.state = {
-             nm: ''
+             nm: '',
+             play: false,
+             mus: true
         }
     }
     
@@ -21,6 +23,7 @@ class leftScreen extends Component {
                 <div className="top-div">
                     iPod
                     <img alt='' className='battery' src='battery.svg'></img>
+                    {this.props.mus?(this.props.play?<img alt='' className='play' src='pause.svg'></img>:<img alt='' className='play' src='play.svg'></img>):''}
                 </div>
                 <div className="nav-div">
                     <div>

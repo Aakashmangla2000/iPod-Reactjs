@@ -60,7 +60,7 @@
 
 // export default Coverfloww
 
-import React, { Component, getMoreData } from 'react'
+import React, { Component } from 'react'
 import Coverflow from 'react-coverflow';
 import './coverflow.css'
 
@@ -80,18 +80,19 @@ class Coverfloww extends Component {
        act: 0,
        play: false,
           pause: true,
-          url: ['Imagine Dragons - Believer.mp3','The Weeknd - Blinding Lights.mp3','Lauv - I Like Me Better.mp3','Numb (Official Video) - Linkin Park.mp3','Queen – Bohemian Rhapsody (Official Video Remastered).mp3','Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spider-Verse).mp3','01 - Udd Gaye (128 Kbps) - DownloadMing.SE.mp3','Coldplay - Viva La Vida.mp3'],
+          url: ['Imagine Dragons - Believer.mp3','The Weeknd - Blinding Lights.mp3','Lauv - I Like Me Better.mp3','Numb (Official Video) - Linkin Park.mp3','Bohemian Rhapsody (Official Video Remastered).mp3','Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spider-Verse).mp3','01 - Udd Gaye (128 Kbps) - DownloadMing.SE.mp3','Coldplay - Viva La Vida.mp3'],
           time: 0,
           ind: 0,
           pind: 0,
-          dur: 0
+          dur: 0,
+          total: 10,
+          chng: false,
+          first: true
     }
     this.fn = this.fn.bind(this)  
-    // this.state.act = this.props.act
-    this.url = this.state.url[this.props.act];
+    this.url = this.state.url[4];
     this.audio = new Audio(this.url);
     this.changetime = this.changetime.bind(this)
-    console.log('con')
   }
 
   fn(){
@@ -99,7 +100,6 @@ class Coverfloww extends Component {
     this.setState({
       act: this.state.act + this.props.act
     })}
-    console.log('hi')
     return this.props.act
   }
 
@@ -111,10 +111,21 @@ class Coverfloww extends Component {
   }
 
   changetime(){
+    if(this.audio.currentTime === 0 && !this.state.play){
+      this.setState({
+        total: 10
+    })
+    }
+    // if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.props.act] && this.state.play){
+    //   this.togglePlay()
+    // }
+    if(this.state.play && this.audio.currentTime!==0)
     this.setState({
-        time: parseInt(this.audio.currentTime)
+        time: parseInt(this.audio.currentTime),
+        total: this.state.total + (290/this.audio.duration)
     })
     
+
     // this.audio.removeEventListener('ended', () => this.setState({ play: false }));  
     // this.url = this.state.url[this.state.ind];
     // this.audio = Audio(this.url);
@@ -128,14 +139,15 @@ class Coverfloww extends Component {
 
   togglePlay = () => {
 
-    if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.props.act]){
-        this.audio.src = (this.state.url[this.props.act+1])
-        console.log(this.props.act,'changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' '),this.state.url[this.props.act+1])
+    if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.props.act] && (this.props.act!==4&&this.props.act!==0?true:(this.state.first?false:true))){
+        this.audio.src = (this.state.url[this.props.act])
+        console.log(this.props.act,'changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/'))).replace(/%20/g,' '),this.state.url[this.props.act])
     }
     this.setState({ play: !this.state.play }, () => {
-        // this.audio.currentTime = this.state.dur;
+        this.state.first = false
       this.state.play ? this.audio.play() : this.audio.pause();
     });
+    console.log(this.audio.duration)
   }
 
   onMusicSelect(name){
@@ -169,18 +181,31 @@ class Coverfloww extends Component {
                 // height: '80px',
                 // overflow: 'visible'
         }
+
+        // const scrub = {
+        //   marginLeft:`300`
+        // }
+
         let min = 0, sec =0;
         sec = parseInt(this.state.time%60)
         min = parseInt(this.state.time/60)
         // if(chn<9&&chn<chn+1)
           return (
               <div>
-                <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"170px",marginTop:"240px"}}>{min}:{sec<10?`0`:``}{sec}</p>
+                <div className="top-div" style={{borderRadius:"15px 15px 0px 0px"}}>
+                    iPod
+                    <img alt='' className='battery' src='battery.svg'></img>
+                {(this.state.play?<img alt='' className='play2' src='pause.svg'></img>:<img alt='' className='play2' src='play.svg'></img>)}
+                </div>
+                <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"303px",marginTop:"215px",color:"gray"}}>{min}:{sec<10?`0`:``}{sec}</p>
+                <img alt=''  className='scrub' style={{transitionProperty:"margin-left",  marginLeft:`${this.state.total}px`}} src='scrubber.svg'></img>
+                <div className="over"></div>
+                
                 <Coverflow 
                     width={340}
-                    height={270}
-                    active={this.props.act+1}
-                    displayQuantityOfSide={1}
+                    height={243}
+                    active={this.props.act}
+                    displayQuantityOfSide={1.3}
                     navigation={false}
                     enableScroll={false}
                     enableHeading={false}
