@@ -116,13 +116,19 @@ class Coverfloww extends Component {
         total: 10
     })
     }
+    if(this.audio.currentTime === this.audio.duration){
+      this.setState({
+        total: 10,
+        time: 0
+    })
+    }
     // if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.props.act] && this.state.play){
     //   this.togglePlay()
     // }
     if(this.state.play && this.audio.currentTime!==0)
     this.setState({
         time: parseInt(this.audio.currentTime),
-        total: this.state.total + (290/this.audio.duration)
+        total: this.state.total + (275/this.audio.duration)
     })
     
 
@@ -192,18 +198,18 @@ class Coverfloww extends Component {
         // if(chn<9&&chn<chn+1)
           return (
               <div>
-                <div className="top-div" style={{borderRadius:"15px 15px 0px 0px"}}>
+                <div className="top-div" style={{borderRadius:"15px 15px 0px 0px",position:"absolute",width:"340px",zIndex:"200",height:"26px"}}>
                     iPod
                     <img alt='' className='battery' src='battery.svg'></img>
                 {(this.state.play?<img alt='' className='play2' src='pause.svg'></img>:<img alt='' className='play2' src='play.svg'></img>)}
                 </div>
-                <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"303px",marginTop:"215px",color:"gray"}}>{min}:{sec<10?`0`:``}{sec}</p>
+                <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"303px",marginTop:"240px",color:"gray"}}>{min}:{sec<10?`0`:``}{sec}</p>
                 <img alt=''  className='scrub' style={{transitionProperty:"margin-left",  marginLeft:`${this.state.total}px`}} src='scrubber.svg'></img>
                 <div className="over"></div>
                 
                 <Coverflow 
                     width={340}
-                    height={243}
+                    height={268}
                     active={this.props.act}
                     displayQuantityOfSide={1.3}
                     navigation={false}

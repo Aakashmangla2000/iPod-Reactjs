@@ -10,7 +10,7 @@
 }
 
 .coverflow__container__1P-xE{
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
 }
 
 .play2{
@@ -20,12 +20,12 @@
     margin-left: 256px;
 }
 .coverflow__figure__3bk_C {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .scrub {
     position: absolute;
-    margin-top: 215px;
+    margin-top: 240px;
     margin-left: 10px;
     z-index: 2;
 }
@@ -38,7 +38,7 @@
 
 .over{
     position: absolute;
-    margin-top: 215px;
+    margin-top: 240px;
     margin-left: 10px;
     width:290px;
     height: 20px;
