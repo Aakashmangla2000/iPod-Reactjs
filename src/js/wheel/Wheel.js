@@ -17,7 +17,7 @@ class Wheel extends Component {
     }
     
     goBack(){
-        window.location = "../"
+    window.location =  '/'
     }
     render() {
       let clck = false
@@ -30,7 +30,7 @@ class Wheel extends Component {
                     <img alt='' src="fast_forward.svg" className="fastForw"></img>
                     <img alt='' src="play_pause.svg" className="playPause"></img>
                     {/* </canvas> */}
-                    <canvas id="myPics" ref="canvas" width={230} height={230} onMouseDown={(e) => moused(e)} onMouseMove={e => this.props.childFunc(mousem(e))} onMouseUp={e => mouseu(e)} onMouseOut={e => mouseu(e)} onTouchStart={(e) => moused(e)} onTouchMove={e => this.props.childFunc(mousem(e))} onTouchEnd={e => mouseu(e)}/>
+                    <canvas id="myPics" ref="canvas" width={230} height={230} onMouseDown={(e) => moused(e)} onMouseMove={e => this.props.childFunc(mousem(e))} onMouseUp={e => mouseu(e)} onTouchStart={(e) => moused(e)} onTouchMove={e => this.props.childFunc(mousem(e))} onTouchEnd={e => mouseu(e)}/>
 
                 </div>
             </div>
@@ -46,6 +46,7 @@ let x = 0;
 let y = 0;
 
 function moused(e) {
+  e.preventDefault();
 if(e.clientX!==undefined){
   x = e.clientX;
   y = e.clientY;}
@@ -57,7 +58,7 @@ if(e.clientX!==undefined){
 }
 
 function mousem(e) {
-  e.preventDefault();
+  // e.preventDefault();
     if (isDrawing === true) {
     if(e.clientX!==undefined){
         drawLine(0, x, y, e.clientX, e.clientY);
@@ -74,6 +75,7 @@ function mousem(e) {
 }
 
 function mouseu(e) {
+  e.preventDefault();
   if (isDrawing === true) {
     if(e.clientX!==undefined){
         drawLine(0, x, y, e.clientX, e.clientY);
@@ -113,7 +115,7 @@ function drawLine(context, x1, y1, x2, y2 , t = 0) {
         
     // console.log(x1,x2,'width')
 
-    if(flag>=4){
+    if(flag>=3){
     if(angle>=0){
       // console.log('anti')
       if(st>0)

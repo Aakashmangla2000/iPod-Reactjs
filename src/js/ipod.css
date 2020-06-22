@@ -4,6 +4,7 @@
 }
 
 .ip{
+    animation: 2.5s ease 0s 2 normal none running descend;
     position: relative;
     height: 100vh;
     max-height: 36.5em;
@@ -13,7 +14,6 @@
     margin: auto;
     border-radius: 30px;
     background: var(--ipodcolor);
-    animation: 1.5s ease 0s 1 normal none running descend;
 }
 
 .bodyy{
@@ -21,6 +21,7 @@
     background: var(--bgcolor);
     height: 100vh;
     width: 100%;
+    overflow-y: hidden;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -30,5 +31,10 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+@media only screen and (max-width: 400px){
+    .bodyy{
+        padding-top: 0vh;
+    }
+}
 
 

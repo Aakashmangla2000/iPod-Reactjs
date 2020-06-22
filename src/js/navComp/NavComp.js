@@ -49,15 +49,15 @@ class NavComp extends Component {
     render() {
         // console.log(this.state.listItems)
 
-        let cssProperties = {}
-        if (this.state.isClicked) {
-         cssProperties['--bgcolor'] = 'white'
-        }
-        if (this.state.ipodClicked) {
-            cssProperties['--ipodcolor'] = 'linear-gradient(to bottom, #787678 0%, #353536 100%)'
-            cssProperties['--wheelbutton'] = '#4d4c4e'
-            cssProperties['--wheelcolor'] = '#2f2f2f'
-        }
+        // let cssProperties = {}
+        // if (this.state.isClicked) {
+        //  cssProperties['--bgcolor'] = 'white'
+        // }
+        // if (this.state.ipodClicked) {
+        //     cssProperties['--ipodcolor'] = 'linear-gradient(to bottom, #787678 0%, #353536 100%)'
+        //     cssProperties['--wheelbutton'] = '#4d4c4e'
+        //     cssProperties['--wheelcolor'] = '#2f2f2f'
+        // }
 
         let max = this.state.listItems.length-1, ch = 0;
         let ch2 = this.props.click
@@ -71,7 +71,7 @@ class NavComp extends Component {
         let l = this.state.listItems.filter((el,ind)=>ch===ind?el:null)
         // console.log(l)
         if(ch2 === true && l[0]!=='Background' && l[0]!=='iPod Colour' && window.location.pathname !== '/Artists' && window.location.pathname !== '/Albums'  ){
-            window.location = `/${l}`
+            window.location = `/${l[0].title}`
             // this.props.onSelect(l)
             // console.log('hi')
         }
@@ -80,7 +80,7 @@ class NavComp extends Component {
         //    console.log('bye')
         }
        
-    let listIt = this.state.listItems.map((el,ind) => <div className={`nav-el ${ch===ind?'active':''}`}><div className="txt">{el}<img alt='' className="r-arrow" src="arrow_right.svg"></img></div></div>)
+    let listIt = this.state.listItems.map((el,ind) => <div className={`nav-el ${ch===ind?'active':''}`}><div className="txt">{el.title}<img alt='' className="r-arrow" src="arrow_right.svg"></img></div></div>)
     // console.log(l)    
     return (
             <div sel = {() => this.props.onSelect(l)}>

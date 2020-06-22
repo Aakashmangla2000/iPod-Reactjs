@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './leftScreen.css'
 import NavComp from '../navComp/NavComp'
+import RightScreen from '../rightScreen/RightScreen'
 
 class leftScreen extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class leftScreen extends Component {
                     </div>
                 </div>
             </div>
-            <img alt='' className="right-img" src="2c3a5a203d30897358861ae85cb98144.jpg"></img>
+            <RightScreen mainmenu={this.props.mainmenu} act={this.props.act}/>
             </div>
         )
     }

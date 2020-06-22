@@ -23,4 +23,6 @@
 
 .r-arrow{
     float: right;
+    height: 100%;
+    margin-bottom: 2px;
 }
