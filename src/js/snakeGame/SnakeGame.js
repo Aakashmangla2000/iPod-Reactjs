@@ -49,6 +49,8 @@ moveSnake=()=>{
       case 'UP':
         head = [head[0], head[1] - 2];
         break;
+      default:
+        break;
   }
   dots.push(head);
   dots.shift();
@@ -142,10 +144,10 @@ leftclick=()=>{
     <button style={{position:"absolute",margin:'0',marginLeft:"46px",marginTop:"81px"}} onClick={this.upclick} ><img alt='' src="menu.svg" className="playPause" style={{"pointer-events": "all"}}></img></button>
     <button style={{marginTop:"40px"}} onClick={this.rightclick} ><img alt='' src="fast_forward.svg" className="fastForw" style={{"pointer-events": "all"}}></img></button>
     <button style={{marginLeft:"55px"}} onClick={this.leftclick}><img alt='' src="rewind.svg" className="rewind" style={{"pointer-events": "all"}}></img></button> */}
-    <button style={{position:"absolute",margin:'0',marginTop:"230px",marginLeft:"148px"}} className="music-btn" onClick={this.downclick}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
-    <button style={{position:"absolute",margin:'0',marginTop:"67px",marginLeft:"143px"}} className="music-btn" onClick={this.upclick}><img alt='' style={{height:"13px"}} src="menu.svg"></img></button>
-    <button style={{position:"absolute",margin:'0',marginTop:"147px",marginLeft:"232px"}} className="music-btn" onClick={this.rightclick}><img alt='' style={{height:"13px"}} src="fast_forward.svg"></img></button>
-    <button style={{position:"absolute",margin:'0',marginTop:"148px",marginLeft:"68px"}} className="music-btn" onClick={this.leftclick}><img alt='' style={{height:"13px"}} src="rewind.svg"></img></button>
+    <button style={{position:"absolute",margin:'0',marginTop:"231px",marginLeft:"144px"}} className="music-btn" onClick={this.downclick}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
+    <button style={{position:"absolute",margin:'0',marginTop:"69px",marginLeft:"135px"}} className="music-btn" onClick={this.upclick}><img alt='' style={{height:"13px"}} src="menu.svg"></img></button>
+    <button style={{position:"absolute",margin:'0',marginTop:"150px",marginLeft:"228px"}} className="music-btn" onClick={this.rightclick}><img alt='' style={{height:"13px"}} src="fast_forward.svg"></img></button>
+    <button style={{position:"absolute",margin:'0',marginTop:"152px",marginLeft:"64px"}} className="music-btn" onClick={this.leftclick}><img alt='' style={{height:"13px"}} src="rewind.svg"></img></button>
 
     </div>
     

@@ -17,7 +17,7 @@ class leftScreen extends Component {
 
 
     render() {
-        let l = this.props.mainmenu.filter((el,ind)=>el===ind?el:null)
+        // let l = this.props.mainmenu.filter((el,ind)=>el===ind?el:null)
         return (
             <div className="tot-sc">
             <div className="l-s-container">

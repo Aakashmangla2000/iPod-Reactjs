@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import './navComp.css'
-import { Route } from 'react-router-dom'
-import SongScreen from '../SongScreen/SongScreen'
-import Playing from '../Playing/Playing'
-
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -75,7 +71,7 @@ class NavComp extends Component {
             
           if(ch2 === true && window.location.pathname === '/Albums'){
             this.props.getSongIndex(ch)
-            window.location = `/Playing/${ch}`
+            window.location = `/Albums/${ch}`
           }
           else
           window.location = `/${l[0].title}`

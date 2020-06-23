@@ -43,7 +43,7 @@ class Screen extends Component {
                     <Route path='/Radio' exact strict render><SongsComp/></Route>
                     <Route path='/Albums' exact strict render><SongComp getSongIndex = {(ind) => this.getSongIndex(ind)} click={this.props.click} songmenu={this.props.songmenu} act={this.props.act}/></Route>
                     <Route path='/Artists' exact strict render><SongComp click={this.props.click} songmenu={this.props.artistmenu} act={this.props.act}/></Route>
-                    <Route path={`/Playing/`} strict render><Playing songIndex={this.state.songIndex} songmenu={this.props.songmenu} act={this.props.act}/></Route>
+                    <Route path={`/Albums/`} strict render><Playing songIndex={this.state.songIndex} songmenu={this.props.songmenu} act={this.props.act}/></Route>
                     {/* <Route path={`/Adhi%20Adhi%20Raat`} exact strict render><SongScreen/></Route> */}
 
             </div>

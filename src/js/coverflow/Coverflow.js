@@ -192,9 +192,9 @@ class Coverfloww extends Component {
         //   marginLeft:`300`
         // }
 
-        let min = 0, sec =0;
-        sec = parseInt(this.state.time%60)
-        min = parseInt(this.state.time/60)
+        // let min = 0, sec =0;
+        // sec = parseInt(this.state.time%60)
+        // min = parseInt(this.state.time/60)
         // if(chn<9&&chn<chn+1)
           return (
               <div>
@@ -244,7 +244,7 @@ class Coverfloww extends Component {
       
         </Coverflow>
         {/* <div style={{position:"absolute",margin:"0",height:"10px",width:"10px",marginLeft:"200px",marginBottom:"200px"}}></div> */}
-        <button style={{position:"absolute",margin:'0',marginTop:"230px",marginLeft:"150px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
+        <button style={{position:"absolute",margin:'0',marginTop:"233px",marginLeft:"144px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
               </div>
     )
   }

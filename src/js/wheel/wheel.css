@@ -51,6 +51,8 @@
     margin: 0px 0px 0px 91px;
 }
 
+
+
 .playPause {
     position: absolute;
     bottom: 10%;
@@ -72,7 +74,7 @@
 
 .rewind {
     position: absolute;
-    lefts: 8%;
+    /* lefts: 8%; */
     user-select: none;
     pointer-events: none;
     max-height: 13px;

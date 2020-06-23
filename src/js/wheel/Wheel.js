@@ -31,16 +31,16 @@ class Wheel extends Component {
     window.location =  '/'
     }
     render() {
-      let et =false
+      // let et =false
 
         return (
             <div className="wheelBody">
                 <div className="wheel">
-                    <img onClick={this.goBack} alt='' src="menu.svg" onError={et=true} className='menu' style={{"pointer-events": "all"}}></img>
-                    <img alt='' src="rewind.svg" className="rewind"></img>
+                    <img onClick={this.goBack} alt='' src="/menu.svg" className='menu' style={{"pointer-events": "all"}}></img>
+                    <img alt='' src="/rewind.svg" className="rewind"></img>
                     <div onClick={() => this.props.buttonClicked(true)} className="innerWheel"></div>
-                    <img alt='' src="fast_forward.svg" className="fastForw"></img>
-                    <img alt='' src="play_pause.svg" className="playPause"></img>
+                    <img alt='' src="/fast_forward.svg" className="fastForw"></img>
+                    <img alt='' src="/play_pause.svg" className="playPause"></img>
                     {/* </canvas> */}
                     <canvas id="myPics" ref="canvas" width={230} height={230} onMouseDown={(e) => moused(e)} onMouseMove={e => this.props.childFunc(mousem(e))} onMouseUp={e => mouseu(e)} onTouchStart={(e) => moused(e)} onTouchMove={e => this.props.childFunc(mousem(e))} onTouchEnd={e => mouseu(e)}/>
 

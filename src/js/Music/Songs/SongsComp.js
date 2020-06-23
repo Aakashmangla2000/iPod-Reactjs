@@ -35,7 +35,7 @@ class SongsComp extends Component {
                     {this.state.play?<img alt='' className='play' src='pause.svg'></img>:<img alt='' className='play' src='play.svg'></img>}
           </div>
           <div className="radio-div" style={{ display:"flex",justifyContent:"center",alignContent:"center", height:"242px",width:"100%"}}>
-              <img style={{height:'100%',width:"100%",borderRadius:"0px 0px 15px 15px", overflow:"hidden"}} src="24902871.jpg"></img>
+              <img alt='' style={{height:'100%',width:"100%",borderRadius:"0px 0px 15px 15px", overflow:"hidden"}} src="24902871.jpg"></img>
               {/* <h1>Radio</h1> */}
               {/* {(this.state.play?<img alt='' className='play3' src='pause.svg'></img>:<img alt='' className='play3' src='play.svg'></img>)} */}
             <button className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
