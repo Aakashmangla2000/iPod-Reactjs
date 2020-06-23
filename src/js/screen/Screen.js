@@ -9,6 +9,7 @@ import AboutUs from '../AboutUs/AboutUs'
 import SongsComp from '../Music/Songs/SongsComp'
 import SongComp from '../Music/SongComp/SongComp'
 import SnakeGame from '../snakeGame/SnakeGame'
+import Playing from '../Playing/Playing'
 
 class Screen extends Component {
 
@@ -17,8 +18,14 @@ class Screen extends Component {
         super(props)
     
         this.state = {
-             
-        }
+             songIndex: this.props.act
+        }  
+    }
+
+    getSongIndex(ind){
+        this.setState({
+         songIndex: ind   
+        })
     }
     
     render() {
@@ -34,8 +41,9 @@ class Screen extends Component {
                     <Route path='/Settings' exact strict render><SettingsScreen act={this.props.act} click={this.props.click} thm={this.props.thm} settingsmenu={this.props.settingsmenu}/></Route>
                     <Route path='/About' exact strict render><AboutUs/></Route>
                     <Route path='/Radio' exact strict render><SongsComp/></Route>
-                    <Route path='/Albums' exact strict render><SongComp click={this.props.click} songmenu={this.props.songmenu} act={this.props.act}/></Route>
+                    <Route path='/Albums' exact strict render><SongComp getSongIndex = {(ind) => this.getSongIndex(ind)} click={this.props.click} songmenu={this.props.songmenu} act={this.props.act}/></Route>
                     <Route path='/Artists' exact strict render><SongComp click={this.props.click} songmenu={this.props.artistmenu} act={this.props.act}/></Route>
+                    <Route path={`/Playing/`} strict render><Playing songIndex={this.state.songIndex} songmenu={this.props.songmenu} act={this.props.act}/></Route>
                     {/* <Route path={`/Adhi%20Adhi%20Raat`} exact strict render><SongScreen/></Route> */}
 
             </div>

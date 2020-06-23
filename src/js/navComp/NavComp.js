@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './navComp.css'
 import { Route } from 'react-router-dom'
 import SongScreen from '../SongScreen/SongScreen'
+import Playing from '../Playing/Playing'
 
 // import {
 //     BrowserRouter as Router,
@@ -70,8 +71,14 @@ class NavComp extends Component {
         }
         let l = this.state.listItems.filter((el,ind)=>ch===ind?el:null)
         // console.log(l)
-        if(ch2 === true && l[0]!=='Background' && l[0]!=='iPod Colour' && window.location.pathname !== '/Artists' && window.location.pathname !== '/Albums'  ){
-            window.location = `/${l[0].title}`
+        if(ch2 === true && l[0]!=='Background' && l[0]!=='iPod Colour' && window.location.pathname !== '/Artists'){
+            
+          if(ch2 === true && window.location.pathname === '/Albums'){
+            this.props.getSongIndex(ch)
+            window.location = `/Playing/${ch}`
+          }
+          else
+          window.location = `/${l[0].title}`
             // this.props.onSelect(l)
             // console.log('hi')
         }
@@ -86,7 +93,8 @@ class NavComp extends Component {
             <div sel = {() => this.props.onSelect(l)}>
                 {listIt}{() => this.props.onSelect(l)}
                 {/* {this.state.show && <SongScreen/>}   */}
-                <Route path={`/Adhi%20Adhi%20Raat`} exact strict render><SongScreen l={l}/></Route>
+                {/* <Route path={`/Adhi%20Adhi%20Raat`} exact strict render><SongScreen l={l}/></Route> */}
+                {/* {this.state.show?<Route path={`/Playing`} exact strict render><Playing l={10}/></Route>:''} */}
     </div>
         )
     }

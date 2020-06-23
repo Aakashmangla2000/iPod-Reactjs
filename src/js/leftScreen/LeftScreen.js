@@ -17,6 +17,7 @@ class leftScreen extends Component {
 
 
     render() {
+        let l = this.props.mainmenu.filter((el,ind)=>el===ind?el:null)
         return (
             <div className="tot-sc">
             <div className="l-s-container">
@@ -27,7 +28,7 @@ class leftScreen extends Component {
                 </div>
                 <div className="nav-div">
                     <div>
-                        <NavComp onSelect={(this.props.onSelect)} act={this.props.act} click={this.props.click} mainmenu={this.props.mainmenu} thm={this.props.thm}/>
+                        <NavComp getSongIndex={this.props.getSongIndex} onSelect={(this.props.onSelect)} act={this.props.act} click={this.props.click} mainmenu={this.props.mainmenu} thm={this.props.thm}/>
                     </div>
                 </div>
             </div>

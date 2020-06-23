@@ -13,11 +13,16 @@
     border-radius: 15px 15px 15px 15px;
 }
 
+.coverflow__container__1P-xE{
+    touch-action: none;
+    pointer-events: none;
+}
+
 .play2{
     position: absolute;
-    height: 15px;
-    margin-top: 3px;
-    margin-left: 256px;
+    height: 10px;
+    margin-top: 5px;
+    margin-left: 215px;
 }
 .coverflow__figure__3bk_C {
     /* margin-bottom: 50px; */

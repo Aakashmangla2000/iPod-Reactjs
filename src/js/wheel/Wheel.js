@@ -17,13 +17,26 @@ class Wheel extends Component {
     }
     
     goBack(){
+    if(window.location.pathname === '/Albums' || window.location.pathname === '/Artists' || window.location.pathname === '/Radio'){
+      window.location = '/Music'
+    }
+    else if(window.location.pathname === '/About')
+    {
+      window.location = '/Settings'
+    }
+    else if(window.location.pathname === '/Playing/'){
+      window.location = '/Albums'
+    }
+    else
     window.location =  '/'
     }
     render() {
+      let et =false
+
         return (
             <div className="wheelBody">
                 <div className="wheel">
-                    <img onClick={this.goBack} alt='' src="menu.svg" className="menu" style={{"pointer-events": "all"}}></img>
+                    <img onClick={this.goBack} alt='' src="menu.svg" onError={et=true} className='menu' style={{"pointer-events": "all"}}></img>
                     <img alt='' src="rewind.svg" className="rewind"></img>
                     <div onClick={() => this.props.buttonClicked(true)} className="innerWheel"></div>
                     <img alt='' src="fast_forward.svg" className="fastForw"></img>

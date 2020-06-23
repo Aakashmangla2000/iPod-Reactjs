@@ -30,7 +30,7 @@ class SongsComp extends Component {
         return (
           <div>
           <div className="top-div" style={{borderRadius:"15px 15px 0px 0px"}}>
-                    iPod
+                    Radio
                     <img alt='' className='battery' src='battery.svg'></img>
                     {this.state.play?<img alt='' className='play' src='pause.svg'></img>:<img alt='' className='play' src='play.svg'></img>}
           </div>

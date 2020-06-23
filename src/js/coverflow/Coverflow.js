@@ -140,20 +140,20 @@ class Coverfloww extends Component {
   componentWillUnmount() {
     this.audio.removeEventListener('ended', () => this.setState({ play: false }));  
     clearInterval(this.intervalID);
-    console.log('bye')
+    // console.log('bye')
   }
 
   togglePlay = () => {
 
     if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.props.act] && (this.props.act!==4&&this.props.act!==0?true:(this.state.first?false:true))){
         this.audio.src = (this.state.url[this.props.act])
-        console.log(this.props.act,'changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/'))).replace(/%20/g,' '),this.state.url[this.props.act])
+        // console.log(this.props.act,'changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/'))).replace(/%20/g,' '),this.state.url[this.props.act])
     }
     this.setState({ play: !this.state.play }, () => {
         this.state.first = false
       this.state.play ? this.audio.play() : this.audio.pause();
     });
-    console.log(this.audio.duration)
+    // console.log(this.audio.duration)
   }
 
   onMusicSelect(name){
@@ -199,19 +199,19 @@ class Coverfloww extends Component {
           return (
               <div>
                 <div className="top-div" style={{borderRadius:"15px 15px 0px 0px",position:"absolute",width:"340px",zIndex:"200",height:"26px"}}>
-                    iPod
+                    Cover Flow
                     <img alt='' className='battery' src='battery.svg'></img>
                 {(this.state.play?<img alt='' className='play2' src='pause.svg'></img>:<img alt='' className='play2' src='play.svg'></img>)}
                 </div>
-                <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"303px",marginTop:"240px",color:"gray"}}>{min}:{sec<10?`0`:``}{sec}</p>
-                <img alt=''  className='scrub' style={{transitionProperty:"margin-left",  marginLeft:`${this.state.total}px`}} src='scrubber.svg'></img>
-                <div className="over"></div>
+                {/* <p style={{position:"absolute",zIndex:"100",margin:"0",marginLeft:"303px",marginTop:"240px",color:"gray"}}>{min}:{sec<10?`0`:``}{sec}</p> */}
+                {/* <img alt=''  className='scrub' style={{transitionProperty:"margin-left",  marginLeft:`${this.state.total}px`}} src='scrubber.svg'></img> */}
+                {/* <div className="over"></div> */}
                 
                 <Coverflow 
                     width={340}
                     height={268}
                     active={this.props.act}
-                    displayQuantityOfSide={1.3}
+                    displayQuantityOfSide={1}
                     navigation={false}
                     enableScroll={false}
                     enableHeading={false}

@@ -42,14 +42,14 @@ class SongComp extends Component {
       componentWillUnmount() {
         this.audio.removeEventListener('ended', () => this.setState({ play: false }));  
         clearInterval(this.intervalID);
-        console.log('bye')
+        // console.log('bye')
       }
     
       togglePlay = () => {
         
         if((this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' ') !== this.state.url[this.state.ind]){
             this.audio.src = (this.state.url[this.state.ind])
-            console.log('changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' '),this.state.url[this.state.ind])
+            // console.log('changed',(this.audio.currentSrc.substring(this.audio.currentSrc.lastIndexOf('/')+1)).replace(/%20/g,' '),this.state.url[this.state.ind])
         }
         this.setState({ play: !this.state.play }, () => {
             // this.audio.currentTime = this.state.dur;
@@ -74,9 +74,9 @@ class SongComp extends Component {
           <div className="radio-div" style={{ display:"flex",justifyContent:"center",alignContent:"center", height:'100%',width:"100%"}}>
               {/* <img style={{height:'100%',width:"100%",borderRadius:"15px", overflow:"hidden"}} src="24902871.jpg"></img> */}
               {/* <h1>Radio</h1> */}
-              <LeftScreen mus={true} play={this.state.play} style={{width:"100%"}} click={this.props.click} act={this.props.act} mainmenu={this.props.songmenu} onSelect={(name) => this.onMusicSelect(name)}/>
+              <LeftScreen getSongIndex={this.props.getSongIndex} mus={true} play={this.state.play} style={{width:"100%"}} click={this.props.click} act={this.props.act} mainmenu={this.props.songmenu} onSelect={(name) => this.onMusicSelect(name)}/>
               {/* {this.state.time} */}
-            <button style={{marginTop:"495px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
+            <button style={{marginTop:"500px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="play_pause.svg"></img></button>
           </div>
         );
       }
