@@ -3,7 +3,7 @@
     border: white;
     position: absolute;
     margin-top:128%;
-    margin-right:3px;
+    margin-right:-2px;
 }
 
 .music-btn:focus{

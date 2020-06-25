@@ -10,7 +10,7 @@ class Playing extends Component {
             play: false,
             pause: true,
             url: ['/Imagine Dragons - Believer.mp3','/The Weeknd - Blinding Lights.mp3','/Lauv - I Like Me Better.mp3','/Numb (Official Video) - Linkin Park.mp3','/Bohemian Rhapsody (Official Video Remastered).mp3','/Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spider-Verse).mp3','/01 - Udd Gaye (128 Kbps) - DownloadMing.SE.mp3','/Coldplay - Viva La Vida.mp3'],
-            artistmenu: [{title:'Imagine Dragons',img:'/cover/Imagine-Dragons-Believer-art.jpg'},{title:'The Weeknd',img:'/cover/The_Weeknd_-_Blinding_Lights.png'},{title:'Lauv',img:'/cover/Lauv_-_I_Like_Me_Better.png'},{title:'Linkin Park',img:'/cover/download.jpg'},{title:'Queen',img:'/cover/Bohemian_Rhapsody_soundtrack.jpg'},{title:'Post Malone',img:'/cover/220px-Into_the_Spider-Verse_Cover.jpg'},{title:'Ritviz',img:'/cover/DPz0Oi1W4AALn-8.jpg'},{title:'Coldplay',img:'cover/61MdbWKFVOL._SY355_.jpg'}],
+            artistmenu: [{title:'Imagine Dragons',img:'/cover/Imagine-Dragons-Believer-art.jpg'},{title:'The Weeknd',img:'/cover/The_Weeknd_-_Blinding_Lights.png'},{title:'Lauv',img:'/cover/Lauv_-_I_Like_Me_Better.png'},{title:'Linkin Park',img:'/cover/download.jpg'},{title:'Queen',img:'/cover/Bohemian_Rhapsody_soundtrack.jpg'},{title:'Post Malone',img:'/cover/220px-Into_the_Spider-Verse_Cover.jpg'},{title:'Ritviz',img:'/cover/DPz0Oi1W4AALn-8.jpg'},{title:'Coldplay',img:'/cover/61MdbWKFVOL._SY355_.jpg'}],
             time: 0,
             ind: 0,
             pind: 0,
@@ -99,7 +99,7 @@ class Playing extends Component {
                     <img alt=''  className='p-scrub' style={{transitionProperty:"margin-left",  marginLeft:`${this.state.total}px`}} src='/scrubber.svg'></img>
                     </div>
                     <img onClick={this.goBack} alt='' src="/menu.svg" className="menu me2" style={{"pointer-events": "all"}}></img>
-                    <button style={{position:"absolute",margin:'0',marginTop:"228px",marginLeft:"150px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="/play_pause.svg"></img></button>
+                    <button style={{position:"absolute",margin:'0',marginTop:"231px",marginLeft:"150px"}} className="music-btn" onClick={this.togglePlay}><img alt='' style={{height:"13px"}} src="/play_pause.svg"></img></button>
                 </div>
         )
     }
